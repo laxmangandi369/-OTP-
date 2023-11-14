@@ -21,6 +21,41 @@ public class OTPService {
              return 0;
        }
    });
+
+
+	    public String saveFile(MultipartFile file) {
+		String originalFilename = file.getOriginalFilename();
+		try {
+			File file1 = convertMultiPartToFile(file);
+			PutObjectResult putObjectResult = s3.putObject(bucketName, originalFilename, file1);
+			return putObjectResult.getContentMd5();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public String saveFile(MultipartFile file) {
+		String originalFilename = file.getOriginalFilename();
+		try {
+			File file1 = convertMultiPartToFile(file);
+			PutObjectResult putObjectResult = s3.putObject(bucketName, originalFilename, file1);
+			return putObjectResult.getContentMd5();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public String saveFile(MultipartFile file) {
+		String originalFilename = file.getOriginalFilename();
+		try {
+			File file1 = convertMultiPartToFile(file);
+			PutObjectResult putObjectResult = s3.putObject(bucketName, originalFilename, file1);
+			return putObjectResult.getContentMd5();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
  }
 //This method is used to push the opt number against Key. Rewrite the OTP if it exists
  //Using user id  as key
